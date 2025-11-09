@@ -1,37 +1,22 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import Home from './pages/Home.tsx'
-import Header from './common/Header.tsx'
-import Footer from './common/Footer.tsx'
+import App from './App.tsx'
+import { grey } from '@mui/material/colors'
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#f6f6f6'  
+      main: '#DFCFBE'  
     },
-    secondary: {
-      main: '#303030'  
-    },
+    secondary: grey
   },
 
 })
 
-const App = () => {
-  return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      backgroundColor: theme.palette.primary.main
-    }}>
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  )
-}
+// App component moved to `./App.tsx`
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

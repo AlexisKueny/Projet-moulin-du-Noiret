@@ -44,6 +44,9 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: moulin-app
+      - name: Lint
+        run: npm run lint
+        working-directory: moulin-app
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
