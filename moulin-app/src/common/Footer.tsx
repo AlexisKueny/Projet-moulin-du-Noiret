@@ -7,7 +7,7 @@ const Footer = () => {
         <footer
             style={{
                 backgroundColor: theme.palette.secondary.dark,
-                color: "white",
+                color: theme.palette.text.secondary,
                 display: "block",
                 width: "100%",
                 textAlign: "center"

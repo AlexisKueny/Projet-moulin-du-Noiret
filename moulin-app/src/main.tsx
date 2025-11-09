@@ -11,9 +11,14 @@ const theme = createTheme({
     primary: {
       main: '#DFCFBE'  
     },
-    secondary: grey
+    secondary: grey,
+    text: {
+      primary: "black",
+      secondary: "white"
+    }
   },
-
+  typography: {
+  }
 })
 
 // App component moved to `./App.tsx`
@@ -22,7 +27,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline >
       <ThemeProvider theme={theme}>
-        <BrowserRouter basename="/moulindunoiret">
+        <BrowserRouter basename="/moulindunoiret/">
           <Routes>
             <Route path="/" element={<App />}>
               <Route index element={<Home />} />

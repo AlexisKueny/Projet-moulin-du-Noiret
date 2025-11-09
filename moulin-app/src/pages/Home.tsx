@@ -21,7 +21,6 @@ const Home = () => {
     return (
         <>
             <div style={{
-                // apply the background + keep the layout styles
                 ...cssVars,
                 display: "flex",
                 flexDirection: "column",
