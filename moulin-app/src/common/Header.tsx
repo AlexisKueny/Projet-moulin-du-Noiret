@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, useTheme } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import { Link } from "react-router";
 
 const Header = () => {
