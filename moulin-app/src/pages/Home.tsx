@@ -1,4 +1,4 @@
-import moulinMain from '../assets/Essai3.png'
+import moulinMain from '../assets/HeroCropped.png'
 import { Grow, useTheme } from '@mui/material';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
                      linear-gradient(45deg, var(--l2)) calc(var(--s)/2) calc(var(--s)/2),
                      linear-gradient(-45deg, var(--l1)) var(--c2)`,
         backgroundSize: `calc(2*var(--s)) var(--s), var(--s) var(--s)`
-    } 
+    }
 
     return (
         <>
@@ -26,16 +26,20 @@ const Home = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 minHeight: "100vh",
+                alignContent: "center"
             }}>
+                <h1>Moulin du Noiret</h1>
+                <h2>Saint Jorioz - Haute Savoie</h2>
                 <Grow in>
+
                     <img
                         src={moulinMain}
                         alt="moulin home"
-                        height={2000}
+                        height={1000}
                         style={{
-                            maxWidth:"80%",
-                            maxHeight:"87vh",
-                            margin:20
+                            maxWidth: "95%",
+                            maxHeight: "87vh",
+                            margin: 20
                         }}
                     />
                 </Grow>
