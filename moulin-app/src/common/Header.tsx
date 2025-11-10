@@ -24,6 +24,7 @@ const Header = () => {
             justifyContent: "center",
             width: "100%",
             gap: "20px",
+            textDecoration: "underline"
           }}>
             <Link to="/" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
               <Stack direction={"row"} alignItems={"center"}>
