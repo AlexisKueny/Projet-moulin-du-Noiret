@@ -1,6 +1,12 @@
 import { useEffect, useRef } from "react";
 import timelineData from "../assets/events.json";
 
+declare global {
+    interface Window {
+        TL: any;
+    }
+}
+
 const History = () => {
     const timelineRef = useRef(null);
 
@@ -17,7 +23,7 @@ const History = () => {
         script.async = true;
 
         script.onload = () => {
-            const timeline = new (window).TL.Timeline(timelineRef.current, timelineData, {
+            const timeline = new window.TL.Timeline(timelineRef.current, timelineData, {
                 initial_zoom: 10
             });
             const length = timelineData.events.length;
