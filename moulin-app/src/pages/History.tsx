@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import timelineData from "../assets/events.json";
 
-interface TimelineJS {
-    Timeline: new (element: HTMLElement | null, data: any, options?: any) => {
+interface TimelineAPI {
+    Timeline: new (element: HTMLElement | null, data: Record<string, unknown>, options?: { initial_zoom?: number }) => {
         goToNext(): void;
         goToStart(): void;
     };
@@ -10,7 +10,7 @@ interface TimelineJS {
 
 declare global {
     interface Window {
-        TL: TimelineJS;
+        TL: TimelineAPI;
     }
 }
 
@@ -30,10 +30,10 @@ const History = () => {
         script.async = true;
 
         script.onload = () => {
-            const timeline = new window.TL.Timeline(timelineRef.current, timelineData, {
+            const timeline = new window.TL.Timeline(timelineRef.current, timelineData as Record<string, unknown>, {
                 initial_zoom: 10
             });
-            const length = timelineData.events.length;
+            const length = (timelineData as { events: unknown[] }).events.length;
             let count = 0;
 
             const loadNextSlide = () => {
