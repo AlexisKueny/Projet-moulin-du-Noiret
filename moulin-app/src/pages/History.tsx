@@ -1,14 +1,21 @@
 import { useEffect, useRef } from "react";
 import timelineData from "../assets/events.json";
 
+interface TimelineJS {
+    Timeline: new (element: HTMLElement | null, data: any, options?: any) => {
+        goToNext(): void;
+        goToStart(): void;
+    };
+}
+
 declare global {
     interface Window {
-        TL: any;
+        TL: TimelineJS;
     }
 }
 
 const History = () => {
-    const timelineRef = useRef(null);
+    const timelineRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         // Load CSS
