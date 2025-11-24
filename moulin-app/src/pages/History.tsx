@@ -2,7 +2,12 @@ import { useEffect, useRef } from "react";
 import timelineData from "../assets/events.json";
 import Button from "@mui/material/Button";
 
-declare const TL: { Timeline: new (element: Element | null, data: Object, params: Object) => any };
+declare const TL: { Timeline: new (element: Element | null, data: object, params: object) => Timeline };
+
+declare interface Timeline {
+    goToNext: () => void;
+    goToStart: () => void;
+}
 
 const History = () => {
     const timelineRef = useRef<HTMLDivElement | null>(null);
@@ -49,7 +54,7 @@ const History = () => {
             >
                 <h1>Timeline</h1>
                 <Button
-                    
+
                 >Play</Button>
                 <Button>Stop</Button>
             </div>
