@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import timelineData from "../assets/events.json";
+import timelineData from "../assets/cadastres.json";
 import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
@@ -18,7 +18,7 @@ const History = () => {
         // Load TimelineJS library if not already loaded
         // Initialize timeline after library loads
         const timeline = new TL.Timeline(timelineRef.current, timelineData, {
-            scale_factor: 0.5
+            scale_factor: 0.5,
         });
         const length = (timelineData as { events: unknown[] }).events.length;
         let count = 0;
@@ -72,7 +72,7 @@ const History = () => {
                 </FormControl>
             </div>
 
-            <div ref={timelineRef} id="timeline-embed" style={{ height: "600px" }}></div>
+            <div ref={timelineRef} id="timeline-embed" style={{ height: "700px" }}></div>
             <br />
         </div>
     );
